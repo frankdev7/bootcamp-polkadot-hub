@@ -4,7 +4,9 @@
 // mod loop_module;
 // mod for_module;
 // mod fn_module;
-mod ownership_borrowing_module;
+// mod ownership_borrowing_module;
+// mod struct_module;
+mod enum_module;
 
 fn main() {
     // arr_module::arr_module::slice_operations();
@@ -18,6 +20,9 @@ fn main() {
     // ownership_borrowing_module::ownership_borrowing_module::ownership();
     // ownership_borrowing_module::ownership_borrowing_module::borrowing_mutable();
     // ownership_borrowing_module::ownership_borrowing_module::borrowing_mutable_string();
-    ownership_borrowing_module::ownership_borrowing_module::fn_reference_primitive_type_box();
-
+    // ownership_borrowing_module::ownership_borrowing_module::fn_reference_primitive_type_box();
+    // struct_module::struct_1_module::struct_custom3();
+    // struct_module::struct_2_module::struct_2_custom();
+    // enum_module::enum_module::program();
+    enum_module::enum_module::colorToString();
 }
