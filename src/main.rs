@@ -6,7 +6,11 @@
 // mod fn_module;
 // mod ownership_borrowing_module;
 // mod struct_module;
-mod enum_module;
+// mod enum_module;
+// mod vector_module;
+// mod hashmap_module;
+// mod errors_module;
+mod custom_errors_module;
 
 fn main() {
     // arr_module::arr_module::slice_operations();
@@ -24,5 +28,18 @@ fn main() {
     // struct_module::struct_1_module::struct_custom3();
     // struct_module::struct_2_module::struct_2_custom();
     // enum_module::enum_module::program();
-    enum_module::enum_module::colorToString();
+    // enum_module::enum_module::colorToString();
+    // vector_module::vector_module::vector_1();
+    // vector_module::vector_module::vector_2();
+    // vector_module::vector_module::vector_3_enumerate();
+    // vector_module::vector_module::vector_4_iter_mut();
+    // hashmap_module::hashmap_module::hasmap_1();
+    // hashmap_module::hashmap_module::login();
+    // errors_module::errors_module::errors_1();
+    // errors_module::errors_module::errors_2();
+    // errors_module::errors_module::errors_3();
+    // errors_module::errors_module::errors_4();
+    // errors_module::errors_module::read_username_from_file();
+    // errors_module::errors_module::read_username_from_file_2();
+    custom_errors_module::custom_errors_module::errors_5();
 }
