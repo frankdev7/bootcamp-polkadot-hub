@@ -10,7 +10,17 @@
 // mod vector_module;
 // mod hashmap_module;
 // mod errors_module;
-mod custom_errors_module;
+// mod custom_errors_module;
+// mod mod_module;
+mod my2;
+
+// pub fn my_function() {
+//     println!("hello from my local function");
+// }
+
+use mycustomcrate;
+use fltk::{app, prelude::*, window::Window};
+
 
 fn main() {
     // arr_module::arr_module::slice_operations();
@@ -41,5 +51,24 @@ fn main() {
     // errors_module::errors_module::errors_4();
     // errors_module::errors_module::read_username_from_file();
     // errors_module::errors_module::read_username_from_file_2();
-    custom_errors_module::custom_errors_module::errors_5();
+    // custom_errors_module::custom_errors_module::errors_5();
+    // mod_module::my_mod::my_function();
+    // my_function();
+    // {
+    //     use mod_module::my_mod::my_function;
+    //     my_function();
+    // }
+
+    // mod_module::my_mod::call_my_external_function();
+
+    my2::function();
+
+    mycustomcrate::hello_function();
+
+    let app = app::App::default();
+    let mut wind = Window::new(100, 100, 400, 300, "Hello from rust");
+    wind.end();
+    wind.show();
+    app.run().unwrap();
+    
 }
