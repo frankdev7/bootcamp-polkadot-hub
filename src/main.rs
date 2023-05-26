@@ -12,16 +12,17 @@
 // mod errors_module;
 // mod custom_errors_module;
 // mod mod_module;
-mod my2;
+// mod my2;
 
 // pub fn my_function() {
 //     println!("hello from my local function");
 // }
 
-use mycustomcrate;
-use fltk::{app, prelude::*, window::Window};
+// use mycustomcrate;
+// use fltk::{app, prelude::*, window::Window};
 
-
+use aggregator::{Summary, Tweet, NewsArticle};
+use test;
 fn main() {
     // arr_module::arr_module::slice_operations();
     // tupla_module::tupla_module::tupla_operations();
@@ -61,14 +62,38 @@ fn main() {
 
     // mod_module::my_mod::call_my_external_function();
 
-    my2::function();
+    // my2::function();
 
-    mycustomcrate::hello_function();
+    // mycustomcrate::hello_function();
 
-    let app = app::App::default();
-    let mut wind = Window::new(100, 100, 400, 300, "Hello from rust");
-    wind.end();
-    wind.show();
-    app.run().unwrap();
-    
+    // let app = app::App::default();
+    // let mut wind = Window::new(100, 100, 400, 300, "Hello from rust");
+    // wind.end();
+    // wind.show();
+    // app.run().unwrap();
+
+
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from("of course, as you probably already know people"),
+        reply: false,
+        retweet: false
+    };
+
+    println!("1 new tweet: {}", tweet.summarize());
+    println!("1 author info tweet: {}", tweet.summarize_author());
+
+    let breaking_news = NewsArticle {
+        headline: String::from("Noticias de Ejemplo"),
+        location: String::from("Polkadot world"),
+        author: String::from("El informante"),
+        content: String::from("Contenido de Ejemplo")
+    };
+
+    aggregator::notify(&breaking_news);
+
+    let breaking_news2 = aggregator::returns_summarizable();
+    let news_summary = breaking_news2.summarize();
+    println!("News Summary: {}", news_summary);
+
 }
