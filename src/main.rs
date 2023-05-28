@@ -21,8 +21,8 @@
 // use mycustomcrate;
 // use fltk::{app, prelude::*, window::Window};
 
-use aggregator::{Summary, Tweet, NewsArticle};
-use test;
+use aggregator::{Summary, Tweet, NewsArticle, AveragedCollection};
+
 fn main() {
     // arr_module::arr_module::slice_operations();
     // tupla_module::tupla_module::tupla_operations();
@@ -95,5 +95,19 @@ fn main() {
     let breaking_news2 = aggregator::returns_summarizable();
     let news_summary = breaking_news2.summarize();
     println!("News Summary: {}", news_summary);
+
+    let list_average_collection = vec![1];
+    let average: f64 = 2.0;
+    let mut average_collection_1 = AveragedCollection {
+        list: list_average_collection,
+        average: average,
+    };
+
+    average_collection_1.add(8);
+    println!("Average is: {}", average_collection_1.average());
+    
+    average_collection_1.remove();
+    println!("Average is: {}", average_collection_1.average());
+    
 
 }
